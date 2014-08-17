@@ -1,16 +1,16 @@
 package helloblock
 
 import (
-	"io/ioutil"
 	"encoding/json"
 	"fmt"
-	"strings"
+	"io/ioutil"
 	"net/http"
 	"net/url"
+	"strings"
 )
 
 type HelloBlockTransaction struct {
-	TxHash string `json:"txHash"`
+	TxHash   string `json:"txHash"`
 	RawTxHex string `json:"rawTxHex"`
 }
 
@@ -19,10 +19,10 @@ type HelloBlockPropagateData struct {
 }
 
 type HelloBlockPropagateReply struct {
-	Status string `json:"status"`
-	Message string `json:"message"`
-	Details []string `json:"details"`
-	Data HelloBlockPropagateData `json:"data"`
+	Status  string                  `json:"status"`
+	Message string                  `json:"message"`
+	Details []string                `json:"details"`
+	Data    HelloBlockPropagateData `json:"data"`
 }
 
 type HelloBlockNetwork string
@@ -33,7 +33,7 @@ func (n *HelloBlockNetwork) String() string {
 
 const (
 	Testnet HelloBlockNetwork = "testnet"
-	Mainnet = "mainnet"
+	Mainnet                   = "mainnet"
 )
 
 const (
