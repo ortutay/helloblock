@@ -100,7 +100,6 @@ func GetAddress(address string) (*HelloBlockGetAddressData, error) {
 		return nil, err
 	}
 	var data HelloBlockGetAddressData
-	fmt.Printf("data %v\n", reply.DataRaw)
 	if err := json.Unmarshal(reply.DataRaw, &data); err != nil {
 		return nil, fmt.Errorf("couldn't process JSON %v: %v", reply.DataRaw, err)
 	}
